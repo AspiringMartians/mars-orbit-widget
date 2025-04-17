@@ -3,7 +3,10 @@
 
 export async function handler(event, context) {
   const planetId = event.queryStringParameters.planetId;
-  const today = new Date().toISOString().split('T')[0];
+  const now = new Date();
+  const today = now.toISOString().split('T')[0];
+  const tomorrow = new Date(now.getTime() + 86400000).toISOString().split('T')[0];
+
 
   if (!planetId) {
     return {
