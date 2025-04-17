@@ -15,7 +15,7 @@ export async function handler(event, context) {
     };
   }
 
-  const horizonsUrl = `https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='${planetId}'&MAKE_EPHEM='YES'&EPHEM_TYPE='VECTORS'&CENTER='500@0'&START_TIME='${today}'&STOP_TIME='${today}'&STEP_SIZE='1 d'`;
+  const horizonsUrl = `https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='${planetId}'&MAKE_EPHEM='YES'&EPHEM_TYPE='VECTORS'&CENTER='500@0'&START_TIME='${today}'&STOP_TIME='${tomorrow}'&STEP_SIZE='1 d'`;
 
   try {
     const res = await fetch(horizonsUrl);
